@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+
+<body class=" bg-dark d-flex align-items-center bg-light" style="height: 100vh;"> 
+<!--login welcome-->
+<div class="container mb-4 mt-3 text-light text-start ms-6 ">
+    <h1 class="text-start mb-auto">become an ILearner    <img  src="5087579.png" alt="login" class="img-fluid rounded-circle mt-2" style="width: 100px; height: 100px;">
+    </h1>
+    <br>
+    <ul class="text-start fs-4">
+        <li>Track your progress</li>
+        <li>get personnalized learning based on your style</li>
+    </ul></p>
+    </div>
+
+<!--login form-->
+<form class=" card shadow p-4 justify me-6" style="width: 400px; min-width: 400px;"  action="/login" method="POST">
+    <div class="text center mb-4 mt-3">
+        <h2 class="text-center mb-auto">Login</h2>
+    </div>
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+    <div class="mb-3">
+      <label for="pwd" class="form-label">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+    </div>
+    <div class="form-check mb-3">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+      </label>
+    </div>
+    <p class="text-end mb-4">don't have an account? <a href="#">sign up</a></p>
+    <button type="submit" class="btn btn-warning">Login</button>
+     <!-- Continue with Google -->
+     <div class="text-center">
+        <br>
+        <p>or</p>
+        <a href="#" class="btn btn-outline-danger w-100">
+            <img src="Google_2015_logo.svg.webp" alt="Google Logo" style="width: 50px; margin-right: 10px;">
+            Continue with Google
+        </a>
+    </div>
+    <p class="text-end mb-3 mt-4"> <a href="#">forgot password?</a></p>
+  </form>
+  <div class="gradient-background justify-content-center align-items-center" style="z-index: -1;">
+    <div class="gradient-sphere sphere-1"></div>
+    <div class="gradient-sphere sphere-2"></div>
+    <div class="gradient-sphere sphere-3"></div>
+    <div class="glow"></div>
+    <div class="grid-overlay"></div>
+    <div class="noise-overlay"></div>
+    <div class="particles-container" id="particles-container"></div>
+</div>
+
+  <script src="js.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
