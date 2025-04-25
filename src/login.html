@@ -9,8 +9,17 @@
 </head>
 
 <body class=" bg-dark d-flex align-items-center bg-light" style="height: 100vh;"> 
-<!--login welcome-->
-<div class="container mb-4 mt-3 text-light text-start ms-6 ">
+  <div class="gradient-background">
+    <div class="gradient-sphere sphere-1"></div>
+    <div class="gradient-sphere sphere-2"></div>
+    <div class="gradient-sphere sphere-3"></div>
+    <div class="glow"></div>
+    <div class="grid-overlay"></div>
+    <div class="noise-overlay"></div>
+    <div class="particles-container" id="particles-container"></div>
+</div>
+  <!--login welcome-->
+<div class=" loginwelc container mb-4 mt-3 text-light text-start ms-6 ">
     <h1 class="text-start mb-auto">become an ILearner    <img  src="5087579.png" alt="login" class="img-fluid rounded-circle mt-2" style="width: 100px; height: 100px;">
     </h1>
     <br>
@@ -21,7 +30,7 @@
     </div>
 
 <!--login form-->
-<form class=" card shadow p-4 justify me-6" style="width: 400px; min-width: 400px;"  action="/login" method="POST">
+<form class=" login-card shadow p-4 justify me-6" style="width: 400px; min-width: 400px;"  action="/login" method="POST">
     <div class="text center mb-4 mt-3">
         <h2 class="text-center mb-auto">Login</h2>
     </div>
@@ -50,15 +59,7 @@
     </div>
     <p class="text-end mb-3 mt-4"> <a href="#">forgot password?</a></p>
   </form>
-  <div class="gradient-background justify-content-center align-items-center" style="z-index: -1;">
-    <div class="gradient-sphere sphere-1"></div>
-    <div class="gradient-sphere sphere-2"></div>
-    <div class="gradient-sphere sphere-3"></div>
-    <div class="glow"></div>
-    <div class="grid-overlay"></div>
-    <div class="noise-overlay"></div>
-    <div class="particles-container" id="particles-container"></div>
-</div>
+ 
 
   <script src="js.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>

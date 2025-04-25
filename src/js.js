@@ -121,3 +121,32 @@ document.addEventListener('mousemove', (e) => {
         sphere.style.transform = `translate(${moveX}px, ${moveY}px)`;
     });
 });
+
+// Handle card click to scroll to the secondary section
+document.querySelectorAll('.card-trigger').forEach(card => {
+    card.addEventListener('click', (e) => {
+        const target = document.querySelector(card.getAttribute('data-target'));
+        target.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// Handle card click to scroll to the respective section
+document.querySelectorAll('.card-trigger').forEach(card => {
+    card.addEventListener('click', (e) => {
+        const target = document.querySelector(card.getAttribute('data-target'));
+        target.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+// Smooth scroll to "What do you want to learn?" section
+document.getElementById('Getstartedbtn').addEventListener('click', () => {
+    const targetSection = document.getElementById('main-section');
+    targetSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+// Handle card click to scroll to the respective section
+document.querySelectorAll('.card-trigger').forEach(card => {
+    card.addEventListener('click', (e) => {
+        const target = document.querySelector(card.getAttribute('data-target'));
+        target.scrollIntoView({ behavior: 'smooth' });
+    });
+});

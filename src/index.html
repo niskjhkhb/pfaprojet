@@ -6,6 +6,7 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
   <link href="css.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
    <!--Navbar -->
@@ -21,9 +22,9 @@
             <li class="nav-item dropdown ">
                 <a class="nav-link active dropdown-toggle " href="#" data-bs-toggle="dropdown">Courses</a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Web Development</a></li>
-                    <li><a class="dropdown-item" href="#">Data Science</a></li>
-                    <li><a class="dropdown-item" href="#">Machine Learning</a></li>
+                    <li><a class="dropdown-item" href="#">Python</a></li>
+                    <li><a class="dropdown-item" href="#">javascript</a></li>
+                    <li><a class="dropdown-item" href="#">Java</a></li>
                     <li><a class="dropdown-item" href="#">Artificial Intelligence</a></li>
                     <li><a class="dropdown-item" href="#">Cloud Computing</a></li>
                     <li><a class="dropdown-item" href="#">Cyber Security</a></li>
@@ -50,8 +51,8 @@
     </div>
 </nav>
 <!--page Content-->
-<section>
-
+<section >
+    
     <div class="gradient-background">
         <div class="gradient-sphere sphere-1"></div>
         <div class="gradient-sphere sphere-2"></div>
@@ -61,6 +62,7 @@
         <div class="noise-overlay"></div>
         <div class="particles-container" id="particles-container"></div>
     </div>
+       
     <div class="content-container">
     <div class="row">
         <div class="content">
@@ -75,18 +77,228 @@
 </section>
 
 
-<!--introduction to the courses-->
-<div>
-    
+
+<!--WHAT DO YOU WANT TO LEARN? -->
+<div class="section main-section unified-background" id="main-section">
+    <div class="card-background text-center">
+        <h1 class="text-gradient mb-5">What do you want to learn?</h1>
+                              <div class="row justify-content-center align-items-center">
+                    <!-- Programming Languages Card -->
+                    <div class="container col-md-3 d-flex justify-content-center">
+                        <div class="card wallet bg-dark text-light card-trigger" data-target="#secondary-section">
+                            <div class="card-body text-center">
+                                <i class="bi bi-code-slash display-1 text-warning"></i> <!-- Bootstrap Icon -->
+                                <h5 class="card-title fw-bold mt-3">Programming Languages</h5>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Databases Card -->
+                    <div class="container col-md-3 d-flex justify-content-center">
+                        <div class="card wallet bg-dark text-light card-trigger" data-target="#databases-section">
+                            <div class="card-body text-center">
+                                <i class="bi bi-database-fill display-1 text-info"></i> <!-- Bootstrap Icon -->
+                                <h5 class="card-title fw-bold mt-3">Databases</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+    </div>
 </div>
-
-
-
-
-
-
-
-
+<div class="section secondary-section" id="secondary-section">
+    <div class="card-background text-center">
+        <h1 class="text-gradient mb-5">Programming Languages</h1>
+        <div class="row justify-content-center align-items-center g-4">
+            <!-- Python Card -->
+            <div id="py" class="col-md-3 d-flex justify-content-center mb-4">
+                <div class="card text-center shadow-lg border-0" style="width: 18rem; border-radius: 20px;">
+                    <div class="card-body">
+                        <div class="icon-container mb-3">
+                            <img src="https://img.icons8.com/color/96/000000/python.png" alt="Python Icon" class="img-fluid" style="width: 60px;">
+                        </div>
+                        <h5 class="card-title fw-bold">Python</h5>
+                        <p class="card-text text-muted">A versatile language for web, data science, and more.</p>
+                        <a href="#" class="btn btn-primary rounded-pill px-4">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- JavaScript Card -->
+            <div id="js" class="col-md-3 d-flex justify-content-center mb-4">
+                <div class="card text-center shadow-lg border-0" style="width: 18rem; border-radius: 20px;">
+                    <div class="card-body">
+                        <div class="icon-container mb-3">
+                            <img src="https://img.icons8.com/color/96/000000/javascript.png" alt="JavaScript Icon" class="img-fluid" style="width: 60px;">
+                        </div>
+                        <h5 class="card-title fw-bold">JavaScript</h5>
+                        <p class="card-text text-muted">The language of the web for interactive applications.</p>
+                        <a href="#" class="btn btn-warning rounded-pill px-4">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Java Card -->
+            <div id="java" class="col-md-3 d-flex justify-content-center mb-4">
+                <div class="card text-center shadow-lg border-0" style="width: 18rem; border-radius: 20px;">
+                    <div class="card-body">
+                        <div class="icon-container mb-3">
+                            <img src="https://img.icons8.com/color/96/000000/java-coffee-cup-logo.png" alt="Java Icon" class="img-fluid" style="width: 60px;">
+                        </div>
+                        <h5 class="card-title fw-bold">Java</h5>
+                        <p class="card-text text-muted">A powerful language for enterprise and mobile apps.</p>
+                        <a href="#" class="btn btn-danger rounded-pill px-4">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- C++ Card -->
+            <div id="cplus" class="col-md-3 d-flex justify-content-center mb-4">
+                <div class="card text-center shadow-lg border-0" style="width: 18rem; border-radius: 20px;">
+                    <div class="card-body">
+                        <div class="icon-container mb-3">
+                            <img src="https://img.icons8.com/color/96/000000/c-plus-plus-logo.png" alt="C++ Icon" class="img-fluid" style="width: 60px;">
+                        </div>
+                        <h5 class="card-title fw-bold">C++</h5>
+                        <p class="card-text text-muted">A high-performance language for system programming.</p>
+                        <a href="#" class="btn btn-info rounded-pill px-4">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Ruby Card -->
+            <div id="rubyjane" class="col-md-3 d-flex justify-content-center mb-4">
+                <div class="card text-center shadow-lg border-0" style="width: 18rem; border-radius: 20px;">
+                    <div class="card-body">
+                        <div class="icon-container mb-3">
+                            <img src="https://img.icons8.com/color/96/000000/ruby-programming-language.png" alt="Ruby Icon" class="img-fluid" style="width: 60px;">
+                        </div>
+                        <h5 class="card-title fw-bold">Ruby</h5>
+                        <p class="card-text text-muted">A dynamic language for web development and scripting.</p>
+                        <a href="#" class="btn btn-danger rounded-pill px-4">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- PHP Card -->
+            <div id="php" class="col-md-3 d-flex justify-content-center mb-4">
+                <div class="card text-center shadow-lg border-0" style="width: 18rem; border-radius: 20px;">
+                    <div class="card-body">
+                        <div class="icon-container mb-3">
+                            <img src="https://img.icons8.com/officel/96/000000/php-logo.png" alt="PHP Icon" class="img-fluid" style="width: 60px;">
+                        </div>
+                        <h5 class="card-title fw-bold">PHP</h5>
+                        <p class="card-text text-muted">A popular language for server-side web development.</p>
+                        <a href="#" class="btn btn-secondary rounded-pill px-4">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Back Button -->
+        <div class="text-center mt-5">
+            <a href="#main-section" class="btn btn-warning px-4 py-2 rounded-pill">↑ Back</a>
+        </div>
+    </div>
+</div>
+<!-- Databases Section -->
+<div class="section databases-section unified-background" id="databases-section">
+    <div class="card-background text-center">
+        <h1 class="text-gradient mb-5">Databases</h1>
+        <div class="row justify-content-center align-items-stretch g-4">
+            <!-- MongoDB Card -->
+            <div id="mongo" class="col-md-3 d-flex justify-content-center">
+                <div class="card text-center shadow-lg border-0 d-flex flex-column" style="width: 18rem; border-radius: 20px;">
+                    <div class="card-body d-flex flex-column">
+                        <div class="icon-container mb-3">
+                            <img src="https://img.icons8.com/color/96/000000/mongodb.png" alt="MongoDB Icon" class="img-fluid" style="width: 60px;">
+                        </div>
+                        <h5 class="card-title fw-bold">MongoDB</h5>
+                        <p class="card-text text-muted">A NoSQL database for modern applications.</p>
+                        <a href="#" class="btn btn-success rounded-pill px-4 mt-auto">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- MySQL Card -->
+            <div id="msql" class="col-md-3 d-flex justify-content-center">
+                <div class="card text-center shadow-lg border-0 d-flex flex-column" style="width: 18rem; border-radius: 20px;">
+                    <div class="card-body d-flex flex-column">
+                        <div class="icon-container mb-3">
+                            <img src="https://img.icons8.com/color/96/000000/mysql-logo.png" alt="MySQL Icon" class="img-fluid" style="width: 60px;">
+                        </div>
+                        <h5 class="card-title fw-bold">MySQL</h5>
+                        <p class="card-text text-muted">A popular relational database management system.</p>
+                        <a href="#" class="btn btn-primary rounded-pill px-4 mt-auto">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- PostgreSQL Card -->
+            <div id="pstgrs" class="col-md-3 d-flex justify-content-center">
+                <div class="card text-center shadow-lg border-0 d-flex flex-column" style="width: 18rem; border-radius: 20px;">
+                    <div class="card-body d-flex flex-column">
+                        <div class="icon-container mb-3">
+                            <img src="https://img.icons8.com/color/96/000000/postgreesql.png" alt="PostgreSQL Icon" class="img-fluid" style="width: 60px;">
+                        </div>
+                        <h5 class="card-title fw-bold">PostgreSQL</h5>
+                        <p class="card-text text-muted">An advanced open-source relational database.</p>
+                        <a href="#" class="btn btn-info rounded-pill px-4 mt-auto">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Back Button -->
+        <div class="text-center mt-5">
+            <a href="#main-section" class="btn btn-warning px-4 py-2 rounded-pill">↑ Back</a>
+        </div>
+    </div>
+</div>
+<!--footer-->
+<footer class="footer bg-light text-dark py-5">
+    <div class="container">
+        <div class="row">
+            <!-- About Section -->
+            <div class="col-md-4 mb-4">
+                <h5 class="text-primary">About ILearnIT</h5>
+                <p class="small">
+                    ILearnIT is your one-stop platform for learning IT skills, from programming to databases and beyond. Join us to enhance your knowledge and career.
+                </p>
+            </div>
+            <!-- Quick Links -->
+            <div class="col-md-4 mb-4">
+                <h5 class="text-primary">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-dark text-decoration-none">Home</a></li>
+                    <li><a href="#secondary-section" class="text-dark text-decoration-none">Programming Languages</a></li>
+                    <li><a href="#databases-section" class="text-dark text-decoration-none">Databases</a></li>
+                    <li><a href="#" class="text-dark text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Social Media -->
+            <div class="col-md-4 mb-4">
+                <h5 class="text-primary">Follow Us</h5>
+                <div class="d-flex flex-wrap">
+                    <!-- Facebook -->
+                    <a href="#" class="text-dark me-3 mb-2 social-icon">
+                        <i class="bi bi-facebook fs-4"></i>
+                    </a>
+                    <!-- Twitter -->
+                    <a href="#" class="text-dark me-3 mb-2 social-icon">
+                        <i class="bi bi-twitter fs-4"></i>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="#" class="text-dark me-3 mb-2 social-icon">
+                        <i class="bi bi-instagram fs-4"></i>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="#" class="text-dark me-3 mb-2 social-icon">
+                        <i class="bi bi-linkedin fs-4"></i>
+                    </a>
+                    <!-- Email -->
+                    <a href="mailto:contact@ilearnit.com" class="text-dark me-3 mb-2 social-icon">
+                        <i class="bi bi-envelope fs-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr class="bg-secondary">
+        <div class="text-center">
+            <p class="mb-0 small">&copy; 2025 ILearnIT. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
 
 
 
