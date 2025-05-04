@@ -4,6 +4,9 @@ from .models import *
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required # for Access Control
 
+def home(request):
+    return render(request,'courses/index.html')
+
 
 
 # Create views here.
@@ -13,7 +16,7 @@ def index(request):
     context = {
         'courses': courses,
     }
-    return render(request, 'courses/index.html', context)
+    return render(request, 'courses/templates/courses/index.html', context)
 
 
 def courses(request):
