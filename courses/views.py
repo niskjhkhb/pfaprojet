@@ -6,11 +6,12 @@ from django.contrib.auth.decorators import login_required # for Access Control
 
 def home(request):
     return render(request,'courses/index.html')
-
-
+ 
+      
 
 # Create views here.
-
+def login(request):
+    return render(request, 'courses/login.html')
 def index(request):
     courses = Course.objects.filter(course_is_active='Yes', course_is_featured="Yes")
     context = {
@@ -18,14 +19,12 @@ def index(request):
     }
     return render(request, 'courses/templates/courses/index.html', context)
 
-
 def courses(request):
     courses = Course.objects.filter(course_is_active='Yes')
     context = {
         'courses': courses,
     }
     return render(request, 'courses/courses.html', context)
-
 
 def topic_courses(request, topic_slug):
     topic = Topic.objects.get(topic_slug=topic_slug)
