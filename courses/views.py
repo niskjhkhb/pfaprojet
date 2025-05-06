@@ -3,15 +3,22 @@ from django.shortcuts import render, redirect
 from .models import *
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required # for Access Control
+from django.http import HttpResponse
+from django.urls import reverse
+
+
+
 
 def home(request):
     return render(request,'courses/index.html')
  
-      
+def signup(request):
+    return render(request,'courses/signup.html')
 
 # Create views here.
 def login(request):
     return render(request, 'courses/login.html')
+
 def index(request):
     courses = Course.objects.filter(course_is_active='Yes', course_is_featured="Yes")
     context = {

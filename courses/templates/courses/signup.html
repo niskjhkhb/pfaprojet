@@ -1,14 +1,53 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="{% static ' courses/static/courses/css.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 </head>
 
 <body class=" bg-dark d-flex align-items-center bg-light" style="height: 100vh;"> 
+    <!--Navbar -->
+   <nav class="navbar navbar-expand-sm bg-info navbar-dark fixed-top p-0">
+    <div class="container-fluid ">
+        <a class="navbar-brand text-dark fw-bold fs-3" href="#">ILearnIT</a>
+   
+    <div class="container-fluid ">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
+            </li>
+            <li class="nav-item dropdown ">
+                <a class="nav-link active dropdown-toggle " href="#" data-bs-toggle="dropdown">Courses</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Python</a></li>
+                    <li><a class="dropdown-item" href="#">javascript</a></li>
+                    <li><a class="dropdown-item" href="#">Java</a></li>
+                    <li><a class="dropdown-item" href="#">Artificial Intelligence</a></li>
+                    <li><a class="dropdown-item" href="#">Cloud Computing</a></li>
+                    <li><a class="dropdown-item" href="#">Cyber Security</a></li>
+                    <li><a class="dropdown-item" href="#">Digital Marketing</a></li>
+                    <li><a class="dropdown-item" href="#">Mobile App Development</a></li>
+                    <li><a class="dropdown-item" href="#">Game Development</a></li>
+                    <li><a class="dropdown-item" href="#">UI/UX Design</a></li>
+                    <li><a class="dropdown-item" href="#">DevOps</a></li>
+                    </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active " href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Contact</a>
+            </li>
+        </ul> 
+    </div>
+
+    </div>
+    
+</nav>
   <div class="gradient-background">
     <div class="gradient-sphere sphere-1"></div>
     <div class="gradient-sphere sphere-2"></div>
@@ -18,9 +57,9 @@
     <div class="noise-overlay"></div>
     <div class="particles-container" id="particles-container"></div>
 </div>
-  <!--login welcome-->
+  <!--signup welcome-->
 <div class=" signupwelc container mb-4 mt-3 text-light text-start ms-6 ">
-    <h1 class="text-start mb-auto">become an ILearner    <img  src="5087579.png" alt="login" class="img-fluid rounded-circle mt-2" style="width: 100px; height: 100px;">
+    <h1 class="text-start mb-auto">become an ILearner    <img  src="{% static 'courses/5087579.png' %}" alt="login" class="img-fluid rounded-circle mt-2" style="width: 100px; height: 100px;">
     </h1>
     <br>
     <ul class="text-start fs-4">
@@ -29,13 +68,13 @@
     </ul></p>
     </div>
 
-<!--login form-->
-<form class=" signup-card shadow p-4 justify me-6" style="width: 400px; min-width: 400px;"  action="/login" method="POST">
-    <div class="text center mb-4 mt-2">
+<!--signup form-->
+<form class=" signup-card shadow p-3 justify me-6 mt-5" style="width: 400px; min-width: 400px;"  action="/login" method="POST">
+    <div class="text center mb-3 mt-2">
         <h2 class="text-center mb-auto">Create your account</h2>
-        <p class="text-end mb-4 mt-4">already have an account? <a href="#">login</a></p>
+        <p class="text-end mb-3 mt-4">already have an account? <a href="{% url 'login'%}">login</a></p>
         <a href="#" class="btn btn-outline-danger w-100">
-            <img src="Google_2015_logo.svg.webp" alt="Google Logo" style="width: 70px; margin-right: 10px;">
+            <img src="{% static 'courses/Google_2015_logo.svg.webp' %}" alt="Google Logo" style="width: 70px; margin-right: 10px;">
         </a>
         <p class="text-center mb-3 mt-4">or</p>
     </div>
@@ -50,7 +89,7 @@
       <label for="email" class="form-label">Email:</label>
       <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
     </div>
-    <div class="mb-4">
+    <div class="mb-3">
       <label for="pwd" class="form-label">Password:</label>
       <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
     </div>
@@ -61,8 +100,7 @@
     
   </form>
  
-
-  <script src="{% static 'courses/static/courses/js.js'%}"></script>
+     <script src="{% static 'courses.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 
 </body>

@@ -531,6 +531,7 @@ section p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
     color: #000000; /* White text */
     z-index: 10;
+    
 }
 
 /* Input Fields */
@@ -943,3 +944,5 @@ body, html {
 .signupwelc{
     z-index: 10;
 }
+
+
