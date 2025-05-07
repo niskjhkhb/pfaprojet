@@ -8,6 +8,11 @@ from django.urls import reverse
 
 
 
+def courses_processor(request):
+    courses = Course.objects.filter(course_is_active='Yes')  # Fetch only active courses
+    return {'courses': courses}
+
+
 
 def home(request):
     return render(request,'courses/index.html')
@@ -24,14 +29,26 @@ def index(request):
     context = {
         'courses': courses,
     }
-    return render(request, 'courses/templates/courses/index.html', context)
+    return render(request, 'index.html', context)
 
-def courses(request):
+def baseview(request):
     courses = Course.objects.filter(course_is_active='Yes')
     context = {
         'courses': courses,
     }
-    return render(request, 'courses/courses.html', context)
+    return render(request, 'courses/baseview.html', context)
+
+
+from django.shortcuts import render, get_object_or_404
+from .models import Course
+
+def course_detail(request, course_slug):
+    course = get_object_or_404(Course, course_slug=course_slug)  # Fetch the course by slug
+    context = {
+        'course': course,
+    }
+    return render(request, 'courses/course_detail.html', context)
+
 
 def topic_courses(request, topic_slug):
     topic = Topic.objects.get(topic_slug=topic_slug)
@@ -56,7 +73,7 @@ def search_courses(request):
         return render(request, 'courses/search_courses.html', context)
 
 
-def course_detail(request, course_slug):
+"""def course_detail(request, course_slug):
     try:
         course = Course.objects.get(course_slug=course_slug)
         lectures = Lecture.objects.filter(course=course.id)
@@ -78,7 +95,7 @@ def course_detail(request, course_slug):
     except:
         messages.error(request, "Course Does not Exist.")
         return redirect(index)
-
+"""
 
 @login_required(login_url='account_login')
 def lecture(request, course_slug):

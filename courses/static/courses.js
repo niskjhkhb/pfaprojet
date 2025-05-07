@@ -150,3 +150,4 @@ document.querySelectorAll('.card-trigger').forEach(card => {
         target.scrollIntoView({ behavior: 'smooth' });
     });
 });
+

@@ -780,12 +780,14 @@ section p {
     padding: 0; /* Remove unnecessary padding */
     margin: 0; /* Remove unnecessary margins */
 }
+
+
 body, html {
-    background: linear-gradient(135deg, #1a1a1a, #333); /* Match the gradient */
-    margin: 0; /* Remove default margins */
-    padding: 0; /* Remove default padding */
-    
+    background: #f8f9fa !important; /* Light gray background */
+    margin: 0;
+    padding: 0;
 }
+
 .secondary-section {
     padding-bottom: 50px; /* Add spacing at the bottom */
 }
@@ -944,5 +946,4 @@ body, html {
 .signupwelc{
     z-index: 10;
 }
-
 

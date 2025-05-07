@@ -1,0 +1,23 @@
+<!-- filepath: c:\MyProjects\pfa\pfaprojet\pfaprojet-1\courses\templates\courses\course_detail.html -->
+{% extends 'courses/base.html' %}
+
+{% block title %}
+{{ course.course_title }}
+{% endblock %}
+
+{% block content %}
+<style>
+        body {
+        background-color: #f8f9fa; /* Light gray background */
+        color: #333; /* Dark text for readability */
+    }
+</style>
+
+<div class="container-fluid mt-5" style="margin-left: 250px;"> <!-- Adjust margin for sidebar -->
+    <div class="content-area w-100 p-4">
+        <h2 class="mb-3">{{ course.course_title }}</h2>
+        <p class="mb-4">{{ course.course_description }}</p>
+        <a href="{% url 'enroll' course.id %}" class="btn btn-success">Enroll</a>
+    </div>
+</div>
+{% endblock %}
