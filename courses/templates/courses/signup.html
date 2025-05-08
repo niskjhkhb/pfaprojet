@@ -1,4 +1,6 @@
 {% load static %}
+{% load crispy_forms_tags %}
+{% load socialaccount %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,43 +13,41 @@
 
 <body class=" bg-dark d-flex align-items-center bg-light" style="height: 100vh;"> 
     <!--Navbar -->
-   <nav class="navbar navbar-expand-sm bg-info navbar-dark fixed-top p-0">
-    <div class="container-fluid ">
-        <a class="navbar-brand text-dark fw-bold fs-3" href="#">ILearnIT</a>
-   
-    <div class="container-fluid ">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
-            </li>
-            <li class="nav-item dropdown ">
-                <a class="nav-link active dropdown-toggle " href="#" data-bs-toggle="dropdown">Courses</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Python</a></li>
-                    <li><a class="dropdown-item" href="#">javascript</a></li>
-                    <li><a class="dropdown-item" href="#">Java</a></li>
-                    <li><a class="dropdown-item" href="#">Artificial Intelligence</a></li>
-                    <li><a class="dropdown-item" href="#">Cloud Computing</a></li>
-                    <li><a class="dropdown-item" href="#">Cyber Security</a></li>
-                    <li><a class="dropdown-item" href="#">Digital Marketing</a></li>
-                    <li><a class="dropdown-item" href="#">Mobile App Development</a></li>
-                    <li><a class="dropdown-item" href="#">Game Development</a></li>
-                    <li><a class="dropdown-item" href="#">UI/UX Design</a></li>
-                    <li><a class="dropdown-item" href="#">DevOps</a></li>
-                    </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active " href="#">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Contact</a>
-            </li>
-        </ul> 
-    </div>
-
-    </div>
+    <nav class="navbar navbar-expand-sm bg-info navbar-dark fixed-top p-0">
+        <div class="container-fluid ">
+            <a class="navbar-brand text-dark fw-bold fs-3" href="#">ILearnIT</a>
+       
+        <div class="container-fluid ">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <!-- <li class="nav-item dropdown ">-->
+                    <a class="nav-link active " href="{% url 'baseview' %}" >Courses</a>
+                   <!-- <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Python</a></li>
+                        <li><a class="dropdown-item" href="#">javascript</a></li>
+                        <li><a class="dropdown-item" href="#">Java</a></li>
+                        <li><a class="dropdown-item" href="#">Artificial Intelligence</a></li>
+                        <li><a class="dropdown-item" href="#">Cloud Computing</a></li>
+                        <li><a class="dropdown-item" href="#">Cyber Security</a></li>
+                        <li><a class="dropdown-item" href="#">Digital Marketing</a></li>
+                        <li><a class="dropdown-item" href="#">Mobile App Development</a></li>
+                        <li><a class="dropdown-item" href="#">Game Development</a></li>
+                        <li><a class="dropdown-item" href="#">UI/UX Design</a></li>
+                        <li><a class="dropdown-item" href="#">DevOps</a></li>
+                        </ul>-->
+              <!--  </li>-->
+               
+            </ul> 
+        </div>
     
-</nav>
+       
+        
+    </div>
+    </nav>
+
+
   <div class="gradient-background">
     <div class="gradient-sphere sphere-1"></div>
     <div class="gradient-sphere sphere-2"></div>
@@ -69,39 +69,42 @@
     </div>
 
 <!--signup form-->
-<form class=" signup-card shadow p-3 justify me-6 mt-5" style="width: 400px; min-width: 400px;"  action="/login" method="POST">
-    <div class="text center mb-3 mt-2">
-        <h2 class="text-center mb-auto">Create your account</h2>
-        <p class="text-end mb-3 mt-4">already have an account? <a href="{% url 'login'%}">login</a></p>
-        <a href="#" class="btn btn-outline-danger w-100">
-        
-            <img src="{% static 'courses/Google_2015_logo.svg.webp' %}" alt="Google Logo" style="width: 70px; margin-right: 10px;">
+
+<form class="signup-card shadow p-3 justify me-6 mt-5" style="width: 400px; min-width: 400px;" method="POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+    <div class="text-center mb-3 mt-2">
+        <h2 class="text-center mb-auto">Create Your Account</h2>
+        <p class="text-end mb-3 mt-4">Already have an account? <a href="{% url 'login' %}">Login</a></p>
+        <a href="{% provider_login_url 'google' %}" class="btn btn-outline-danger w-100">
+            <img src="{% static 'courses/Google_2015_logo.svg.webp' %}" alt="Google Logo" style="width: 20px; margin-right: 10px;">
+            Sign Up with Google
         </a>
         <p class="text-center mb-3 mt-4">or</p>
     </div>
-      <label for="first name" class="form-label">first name:</label>
-      <input type="first name" class="form-control" id="fn" placeholder= "first name" name="first name">
+
+    <!-- Render Form Fields with Crispy Forms and Error Icons -->
+    {% for field in form %}
+    <div class="mb-3 position-relative">
+        {{ field|as_crispy_field }}
+        {% if field.errors %}
+        <span class="text-danger position-absolute top-50 end-0 translate-middle-y" data-bs-toggle="tooltip" data-bs-placement="right" title="{{ field.errors|join:', ' }}">
+            <i class="bi bi-exclamation-circle-fill"></i>
+        </span>
+        {% endif %}
     </div>
-    <div class="mb-1">
-      <label for="last name" class="form-label">last name:</label>
-      <input type="last name" class="form-control" id="ln" placeholder="last name" name="last name">
-    </div>
-    <div class="mb-1">
-      <label for="email" class="form-label">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-    </div>
-    <div class="mb-3">
-      <label for="pwd" class="form-label">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
-    </div>
-    
-    <button type="submit" class="btn btn-warning mt-4">sign up</button>
-    
-      
-    
-  </form>
- 
-     <script src="{% static 'courses.js' %}"></script>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-warning mt-4 w-100">Sign Up</button>
+</form>
+
+<script>
+    // Initialize Bootstrap tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+    <script src="{% static 'courses.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 
 </body>

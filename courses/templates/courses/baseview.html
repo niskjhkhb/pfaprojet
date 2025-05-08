@@ -6,5 +6,18 @@ Courses
 {% endblock %}
 
 {% block content %}
-
+<sidebar class="sidebar">
+    <div class="sidebar-header">
+        <h3>courses</h3>
+    </div>
+        <ul class="list-unstyled components p-3">
+            {% for course in courses %}
+            <li>
+                <a href="{% url 'course_detail' course.course_slug %}">{{ course.course_title }}</a>
+            </li>
+            {% empty %}
+            <li>No courses available.</li>
+            {% endfor %}
+        </ul>
+</sidebar>
 {% endblock %}

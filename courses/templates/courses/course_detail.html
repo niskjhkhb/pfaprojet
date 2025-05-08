@@ -13,11 +13,34 @@
     }
 </style>
 
+<sidebar class="sidebar">
+    <div class="sidebar-header">
+        <h3>courses</h3>
+    </div>
+        <ul class="list-unstyled components p-3">
+            {% for course in courses %}
+            <li>
+                <a href="{% url 'course_detail' course.course_slug %}">{{ course.course_title }}</a>
+            </li>
+            {% empty %}
+            <li>No courses available.</li>
+            {% endfor %}
+        </ul>
+</sidebar>
+
 <div class="container-fluid mt-5" style="margin-left: 250px;"> <!-- Adjust margin for sidebar -->
     <div class="content-area w-100 p-4">
         <h2 class="mb-3">{{ course.course_title }}</h2>
         <p class="mb-4">{{ course.course_description }}</p>
         <a href="{% url 'enroll' course.id %}" class="btn btn-success">Enroll</a>
+        <a href="{% url 'quiz' course.course_slug %}" class="btn btn-primary">Take Quiz</a>
+
+        <!-- Display the quiz score -->
+        {% if quiz_score is not None %}
+        <div class="mt-4">
+            <h4>Your Quiz Score: {{ quiz_score|floatformat:2 }}%</h4>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

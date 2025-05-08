@@ -947,3 +947,20 @@ body, html {
     z-index: 10;
 }
 
+.profile-icon {
+
+    
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f8f9fa; /* Light background */
+    color: #212529; /* Dark icon color */
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.profile-icon:hover {
+    background-color: #ffc107; /* Bootstrap warning color on hover */
+    color: #212529;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}

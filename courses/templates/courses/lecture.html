@@ -1,0 +1,40 @@
+<!-- filepath: c:\MyProjects\pfa\pfaprojet\pfaprojet-1\courses\templates\courses\lecture.html -->
+{% extends 'courses/base.html' %}
+
+{% block title %}
+{{ course.course_title }} - Lectures
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-5" style="margin-left: 250px;"> <!-- Adjust margin for sidebar -->
+
+    <!-- Sidebar for Lectures -->
+    <sidebar class="sidebar">
+        <div class="sidebar-header">
+            <h3>Lectures</h3>
+        </div>
+        <ul class="list-unstyled components p-3">
+            {% for lecture in lectures %}
+            <li class="{% if lecture == lecture_selected %}active{% endif %}">
+                <a href="{% url 'lecture_selected' course.course_slug lecture.lecture_slug %}">
+                    {{ lecture.lecture_title }}
+                </a>
+            </li>
+            {% empty %}
+            <li>No lectures available.</li>
+            {% endfor %}
+        </ul>
+    </sidebar>
+
+    <!-- Main content area -->
+    <div class="col-md-9">
+        <h2>{{ lecture_selected.lecture_title }}</h2>
+        <p>{{ lecture_selected.lecture_description }}</p>
+        {% if lecture_selected.lecture_video %}
+        <div class="mt-4">
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/{{ lecture_selected.lecture_video }}" frameborder="0" allowfullscreen></iframe>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

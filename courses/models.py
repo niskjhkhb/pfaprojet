@@ -133,6 +133,7 @@ class Progress(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     completed_lectures = models.ManyToManyField(Lecture, blank=True)
+    quiz_score = models.FloatField(default=0.0)  
     completed_quizzes = models.ManyToManyField(Quiz, blank=True)
     last_updated = models.DateTimeField(auto_now=True)
 
@@ -163,7 +164,7 @@ class Review(models.Model):
     def __str__(self):
         return f"{self.user.username}'s review of {self.course.course_title}"
     
-    
+
     
     
 

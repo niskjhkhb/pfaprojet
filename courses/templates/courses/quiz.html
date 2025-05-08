@@ -1,0 +1,29 @@
+<!-- filepath: c:\MyProjects\pfa\pfaprojet\pfaprojet-1\courses\templates\courses\quiz.html -->
+{% extends 'courses/base.html' %}
+
+{% block title %}
+{{ quiz.title }}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5" style="margin-left: 250px;"> <!-- Adjust margin for sidebar -->
+    <div class="content-area p-4 bg-light rounded shadow-sm">
+        <h1 class="text-center mb-4">{{ quiz.title }}</h1>
+        <form method="post" action="{% url 'submit_quiz' course.course_slug %}">
+            {% csrf_token %}
+            {% for question in quiz.questions.all %}
+            <div class="mb-4">
+                <h5>{{ forloop.counter }}. {{ question.text }}</h5>
+                {% for answer in question.answers.all %}
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question_{{ question.id }}" value="{{ answer.id }}" id="q{{ question.id }}_{{ answer.id }}">
+                    <label class="form-check-label" for="q{{ question.id }}_{{ answer.id }}">{{ answer.text }}</label>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-success">Submit Quiz</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
